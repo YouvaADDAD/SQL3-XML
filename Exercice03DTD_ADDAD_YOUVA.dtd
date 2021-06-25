@@ -1,0 +1,38 @@
+<!ELEMENT mondial (continent*,organization*,river*)>
+
+<!ELEMENT continent (country*) >
+<!ATTLIST continent name CDATA #REQUIRED>
+
+<!ELEMENT country (province*,border*) >
+<!ATTLIST country name CDATA #REQUIRED
+                  code CDATA #REQUIRED
+                  population CDATA #REQUIRED
+                  Source IDREFS #IMPLIED
+                  isMember IDREFS #IMPLIED >
+
+<!ELEMENT province (mountain*) >
+<!ATTLIST province name CDATA #REQUIRED>
+
+<!ELEMENT mountain (coordinates?)>
+<!ATTLIST mountain name CDATA #REQUIRED
+                   height CDATA #REQUIRED>
+
+<!ELEMENT coordinates EMPTY>
+<!ATTLIST coordinates latitude CDATA #REQUIRED
+                    longitude CDATA #REQUIRED >
+
+<!ELEMENT border EMPTY>
+<!ATTLIST border country CDATA #REQUIRED
+                 length CDATA #REQUIRED>
+
+<!ELEMENT organization EMPTY>
+<!ATTLIST organization  id ID #REQUIRED
+                        abbreviation CDATA #REQUIRED
+                        name CDATA #REQUIRED
+                        dateCreation CDATA #IMPLIED>
+
+<!ELEMENT river EMPTY>
+<!ATTLIST river id ID #REQUIRED
+                name CDATA #REQUIRED
+                length  CDATA #IMPLIED >  
+
